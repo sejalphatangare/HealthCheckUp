@@ -48,6 +48,26 @@ public class CheckUpList {
              }  
              temp=temp.next;
             }
+            node.next=temp;
+            node.prev=temp.prev;
+            temp.prev.next=node;
+            temp.prev=node;
+        }
+    }
+    public CheckUp Dequeue(){
+        if(head==null){
+            return null;
+        }
+        Cnode checkup=head;
+        head=head.next;
+        return checkup.cu;
+    }
+    
+    public void Print(){
+        Cnode temp=head;
+        while(temp!=null){
+            System.out.println("Priority: "+temp.cu.getPriority()+" Recommendation: "+temp.cu.getRecommendation());
+            temp=temp.prev;
         }
     }
 }

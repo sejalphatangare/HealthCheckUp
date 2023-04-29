@@ -31,9 +31,20 @@ public class HealthCheckupSystem {
         dlist.InsertDoctor(d3);
 
         dlist.allDoctorInfo();
+        System.out.println(dlist.searchbyId("2").getName()+" "+dlist.searchbyId("2").getFees());
         
+        CheckUp c1=new CheckUp(d1, p1, 3, "A", "12");
+        CheckUp c2=new CheckUp(d2, p2, 2, "B", "30");
+        CheckUp c3=new CheckUp(d3, p3, 1, "C", "1");
+        CheckUp c4=new CheckUp(d1, p1, 2, "E", "4");
+
+        CheckUpList clist=new CheckUpList();
+        clist.Enqueue(c1);
+        clist.Enqueue(c2);
+        clist.Enqueue(c3);
+        clist.Enqueue(c4);
+        clist.Print();
         
-    
     
     }
 }
