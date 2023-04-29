@@ -2,7 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.healthcheckupsystem;
+package com.mycompany.healthcheckupsystem.info;
+
+import com.mycompany.healthcheckupsystem.model.CheckUp;
+import com.mycompany.healthcheckupsystem.model.Patient;
 
 /**
  *
@@ -69,5 +72,30 @@ public class CheckUpList {
             System.out.println("Priority: "+temp.cu.getPriority()+" Recommendation: "+temp.cu.getRecommendation());
             temp=temp.prev;
         }
+    }
+    public void addRecommendation(int index,String rec){
+        Cnode temp=head;
+        int i=0;
+        while(temp!=null){
+            if(index==i){
+                temp.cu.setRecommendation(rec);
+                break;
+            }
+            i++;
+            temp=temp.prev;
+        }
+    }
+    public Patient getPatient(int index){
+        Cnode temp=head;
+        int i=0;
+        while(temp!=null){
+            if(index==i){
+                break;
+            }
+            i++;
+            temp=temp.prev;
+        }
+        return temp.cu.getPatient();
+        
     }
 }

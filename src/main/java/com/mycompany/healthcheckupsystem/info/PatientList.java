@@ -2,7 +2,9 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.healthcheckupsystem;
+package com.mycompany.healthcheckupsystem.info;
+
+import com.mycompany.healthcheckupsystem.model.Patient;
 
 /**
  *
@@ -52,6 +54,15 @@ public class PatientList {
         }
         return null;
     }
+    public int size(){
+        Pnode temp=head;
+        int count=0;
+        while(temp!=null){
+            count++;
+            temp=temp.prev;
+        }
+        return count;
+    }
     public Patient searchbyContact(String contact){
         Pnode temp=head;
         while(temp!=null){
@@ -61,6 +72,15 @@ public class PatientList {
             temp=temp.prev;
         }
         return null;
+    }
+    public void printData(){
+        Pnode temp=head;
+        int count=0;
+        while(temp!=null){
+            count++;
+            System.out.println(count+": "+temp.patient.toString());
+            temp=temp.prev;
+        }
     }
 }   
 

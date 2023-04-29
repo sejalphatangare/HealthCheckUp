@@ -2,7 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.healthcheckupsystem;
+package com.mycompany.healthcheckupsystem.model;
+
+import com.mycompany.healthcheckupsystem.model.Doctor;
+import com.mycompany.healthcheckupsystem.model.Patient;
 
 /**
  *
